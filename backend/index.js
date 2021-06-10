@@ -19,12 +19,6 @@ db.once('open', function () {
     console.log("Connected")
 });
 
-
-const {DbModels} = require("./database/DbModels")
-// const dbm = new DbModels()
-// // const userModel = dbm.userModel
-
-
 const User = require('./database/user/User')
 let u = new User.User()
 

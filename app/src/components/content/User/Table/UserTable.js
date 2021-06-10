@@ -1,10 +1,10 @@
 import {Paper, Table, TableBody, TableCell, TableHead, TableRow} from "@material-ui/core";
 import React, {useEffect, useState} from "react";
-import {selectIsNew, toggleIsNew} from "../../../../redux/person/PersonSlice";
+import {selectIsNew} from "../../../../redux/person/PersonSlice";
 import {useDispatch, useSelector} from 'react-redux';
-import httpService from "../../../../services/httpService";
+import HttpService from "../../../../services/httpService";
 import UserTableRow from "./UserTableRow";
-import UsersSlice, {selectUsers, setUsers} from "../../../../redux/Users/UsersSlice";
+import  {setUsers} from "../../../../redux/Users/UsersSlice";
 
 export default function UserTable() {
 
@@ -13,7 +13,7 @@ export default function UserTable() {
     const [loaded,setLoaded] = React.useState(false)
     const isNew = useSelector(selectIsNew)
     const display = (loaded===true) ? "block" : "none"
-    const svc = new httpService()
+    const svc = new HttpService()
     const dispatch = useDispatch()
 
     useEffect(() => {
@@ -50,7 +50,7 @@ export default function UserTable() {
                     {data.map((user, index) => {
 
                         return(
-                            <UserTableRow user={user} index={index}/>
+                            <UserTableRow user={user} index={index} key={"UserTableRow_" + user._id}/>
 
                             )
 

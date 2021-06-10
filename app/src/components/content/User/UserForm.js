@@ -15,7 +15,7 @@ import httpService from "../../../services/httpService";
 
 const svc = new httpService()
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     box: {
         boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
         padding: 50,

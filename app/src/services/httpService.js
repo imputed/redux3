@@ -1,5 +1,3 @@
-import React from 'react';
-
 const baseUrl = "http://localhost:3002"
 
 export class httpService {

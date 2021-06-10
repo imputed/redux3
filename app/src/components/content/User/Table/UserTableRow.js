@@ -1,15 +1,15 @@
-import {Button, TableCell, TableRow} from "@material-ui/core";
+import {TableCell, TableRow} from "@material-ui/core";
 import React from "react";
 import {toggleIsNew} from "../../../../redux/person/PersonSlice";
-import httpService from "../../../../services/httpService";
+import HttpService from "../../../../services/httpService";
 import {useDispatch} from "react-redux";
 
 export default function UserTableRow(props) {
-    const svc = new httpService()
+    const svc = new HttpService()
     const dispatch = useDispatch()
     const deleteUser = (event) => {
         let usr = {}
-        usr._id = event.target.attributes._id.value
+        usr._id = event.target.attributes.id.value
         console.log(usr)
         svc.deleteUser(usr).then((res,err) => console.log("deleted " + err +" " + res ))
         dispatch(toggleIsNew())
@@ -30,7 +30,7 @@ export default function UserTableRow(props) {
                 {props.user.role}
             </TableCell>
             <TableCell>
-                <button type={"submit"} _id={props.user._id}  onClick={(event) => {
+                <button type={"submit"} id={props.user._id}  onClick={(event) => {
                     deleteUser(event)
                 }}>
                     Delete</button>
