@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1d5041b-0fc3-4d87-bdf7-573e6773da71" name="Default Changelist" comment="4 Players added">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/content/Game/Player.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/content/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Content.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/content/Game/GamesInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Game/GamesInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/content/Game/PlayerSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Game/PlayerSelector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTableRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTableRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/content/User/UserForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/User/UserForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/Counter.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/redux/counter/Counter.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/services/httpService.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/services/httpService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/backend/node_modules/.bin/mime" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +51,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/index.js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -72,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bene\Desktop\redux3\app\src\components\content\Game" />
       <recent name="\\wsl$\Ubuntu-20.04\home\bene\yarn\redux\app\src\redux\Users" />
       <recent name="\\wsl$\Ubuntu-20.04\home\bene\yarn\redux\app\src\components\content\Content\Table" />
       <recent name="\\wsl$\Ubuntu-20.04\home\bene\yarn\redux\app\src\services" />
@@ -80,7 +72,7 @@
       <recent name="\\wsl$\Ubuntu-20.04\home\bene\yarn\redux\app\src\components\content\Content\Table" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.fe_npm">
+  <component name="RunManager" selected="Node.js.index.js">
     <configuration default="true" type="CompoundRunConfigurationType">
       <toRun name="FE" type="ShConfigurationType" />
       <toRun name="BE" type="ShConfigurationType" />
@@ -90,6 +82,12 @@
       <toRun name="be_npm" type="js.build_tools.npm" />
       <toRun name="fe_npm" type="js.build_tools.npm" />
       <toRun name="Docker" type="ShConfigurationType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/backend">
       <method v="2" />
     </configuration>
     <configuration name="BE" type="ShConfigurationType">
@@ -158,6 +156,8 @@
     </configuration>
     <list>
       <item itemvalue="Compound.redux" />
+      <item itemvalue="JavaScript Debug.Frontend" />
+      <item itemvalue="Node.js.index.js" />
       <item itemvalue="npm.be_npm" />
       <item itemvalue="npm.fe_npm" />
       <item itemvalue="Shell Script.FE" />
@@ -181,8 +181,18 @@
       <workItem from="1623317543590" duration="664000" />
       <workItem from="1623323333968" duration="5182000" />
       <workItem from="1623333248153" duration="691000" />
-      <workItem from="1623334403989" duration="5376000" />
+      <workItem from="1623334403989" duration="17138000" />
+      <workItem from="1623352928810" duration="3295000" />
+      <workItem from="1623392316850" duration="794000" />
     </task>
+    <task id="LOCAL-00001" summary="4 Players added">
+      <created>1623339927514</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1623339927514</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,15 +235,21 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/src/components/content/User/UserForm.js</url>
-          <line>36</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/app/src/components/content/Game/Player.js</url>
+          <line>17</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/src/App.js</url>
-          <line>22</line>
+          <url>file://$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js</url>
+          <line>27</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/components/content/User/UserForm.js</url>
+          <line>37</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

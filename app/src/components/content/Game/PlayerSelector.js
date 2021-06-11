@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Controller, useForm} from "react-hook-form";
 import {useSelector} from "react-redux";
 import {Box, Button, Card, FormLabel, Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import Select from "react-select";
-import {selectUsers} from "../../../redux/Users/UsersSlice";
+import {selectPlayers, selectPlayersId, selectUsers} from "../../../redux/Users/UsersSlice";
+import Player from "./Player";
 
 const useStyles = makeStyles(() => ({
     box: {
@@ -15,16 +15,34 @@ const useStyles = makeStyles(() => ({
 }));
 
 export function PlayerSelector() {
+    const [placeholder, setPlaceholder]= React.useState(["Default","Default","Default","Default"])
+    const player = useSelector(selectPlayers)
+
+
+    useEffect(() => {
+        player.forEach((p) => {
+            placeholder[p.id]=p.label
+        })
+        setPlaceholder(placeholder)
+        console.log(placeholder)
+            }, [player])
+
+
+
+
     const {control, handleSubmit} = useForm();
 
     const onSubmit = (data) => {
-        console.log(data)
+        console.log(player)
     };
 
     const classes = useStyles()
 
     const selectedUsers = []
     useSelector(selectUsers).map((user) => selectedUsers.push({value: user._id, label: user.name}))
+
+
+
 
     return (
         <Box className={classes.box}>
@@ -34,85 +52,22 @@ export function PlayerSelector() {
                 <Grid container spacing={8} justify={"space-around"}>
                     <Grid item>
                         <Grid container spacing={8}>
-                            <Grid item>
-                                <Grid container justify={"center"} direction={"row"} spacing={2}>
-                                    <Grid item>
-                                        <FormLabel>Player 1</FormLabel>
-                                    </Grid>
-                                    <Grid item style={{width: "100%"}}>
-                                        <Controller
-                                            name="player_1"
-                                            control={control}
-                                            render={({field}) => <Select
-                                                {...field}
-                                                options={selectedUsers}
-                                            />}
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item>
-                                <Grid container justify={"center"} direction={"row"} spacing={2}>
-                                    <Grid item>
-                                        <FormLabel>Player 2</FormLabel>
-                                    </Grid>
-                                    <Grid item style={{width: "100%"}}>
-                                        <Controller
-                                            name="player_2"
-                                            control={control}
-                                            render={({field}) => <Select
-                                                {...field}
-                                                options={selectedUsers}
-                                            />}
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </Grid>
+                            <Player users={selectedUsers} name={"Player 1"} id={"0"} placeholder={placeholder[0]}/>
+                            <Player users={selectedUsers} name={"Player 2"} id={"1"} placeholder={placeholder[1]}/>
+
+
                         </Grid>
                     </Grid>
                     <Grid item>
                         <Grid container spacing={8}>
-                            <Grid item>
-                                <Grid container justify={"center"} direction={"row"} spacing={2}>
-                                    <Grid item>
-                                        <FormLabel>Player 3</FormLabel>
-                                    </Grid>
-                                    <Grid item style={{width: "100%"}}>
-                                        <Controller
-                                            name="player_3"
-                                            control={control}
-                                            render={({field}) => <Select
-                                                {...field}
-                                                options={selectedUsers}
-                                            />}
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item>
-                                <Grid container justify={"center"} direction={"row"} spacing={2}>
-                                    <Grid item>
-                                        <FormLabel>Player 4</FormLabel>
-                                    </Grid>
-                                    <Grid item style={{width: "100%"}}>
-                                        <Controller
-                                            name="player_4"
-                                            control={control}
-                                            render={({field}) => <Select
-                                                {...field}
-                                                options={selectedUsers}
-                                            />}
-                                        />
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
+                            <Player users={selectedUsers} name={"Player 3"} id={"2"} placeholder={placeholder[2]}/>
+                            <Player users={selectedUsers} name={"Player 4"} id={"3"} placeholder={placeholder[3]}/> </Grid>
                     </Grid>
                     <Grid item xs={12}>
                         <Grid container justify={"center"}>
                             <Grid item>
-                                <Card style={{alignItems:"center",width:"100%", textAlign:"center"}}>
-                                    <Button type={"submit"}>Submit</Button>
+                                <Card style={{alignItems: "center", width: "100%", textAlign: "center"}}>
+                                    <Button type={"submit"}>Initiate Game</Button>
                                 </Card>
                             </Grid>
                         </Grid>
@@ -123,6 +78,8 @@ export function PlayerSelector() {
 
 
             </form>
+
+
         </Box>
     );
 }
