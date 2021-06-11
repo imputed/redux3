@@ -46,13 +46,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="//wsl$/Ubuntu-20.04/" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -80,13 +81,6 @@
       <toRun name="fe_npm" type="js.build_tools.npm" />
       <method v="2" />
     </configuration>
-    <configuration name="redux" type="CompoundRunConfigurationType">
-      <toRun name="Docker" type="ShConfigurationType" />
-      <toRun name="BE" type="NodeJSConfigurationType" />
-      <toRun name="Frontend" type="JavascriptDebugType" />
-      <toRun name="fe_npm" type="js.build_tools.npm" />
-      <method v="2" />
-    </configuration>
     <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
@@ -94,12 +88,12 @@
       <method v="2" />
     </configuration>
     <configuration name="Docker" type="ShConfigurationType">
-      <option name="SCRIPT_TEXT" value="docker start af1b8cba2508" />
+      <option name="SCRIPT_TEXT" value="docker start daecd18da816924c580bf30fd970c86775937f2f9992434bca470c8333a4c0c2" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
       <option name="SCRIPT_PATH" value="docker start af1b8cba2508" />
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="false" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="//wsl$/Ubuntu-20.04/" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$USER_HOME$" />
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,7 +122,6 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Compound.redux" />
       <item itemvalue="Compound.debug" />
       <item itemvalue="JavaScript Debug.Frontend" />
       <item itemvalue="Node.js.BE" />
@@ -156,6 +149,8 @@
       <workItem from="1623334403989" duration="17138000" />
       <workItem from="1623352928810" duration="3295000" />
       <workItem from="1623392316850" duration="2069000" />
+      <workItem from="1623411549546" duration="414000" />
+      <workItem from="1623412031332" duration="1517000" />
     </task>
     <task id="LOCAL-00001" summary="4 Players added">
       <created>1623339927514</created>
@@ -222,25 +217,21 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js</url>
           <line>27</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/src/components/content/User/UserForm.js</url>
           <line>37</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/index.js</url>
           <line>32</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/database/user/User.js</url>
           <line>29</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
