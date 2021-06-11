@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1d5041b-0fc3-4d87-bdf7-573e6773da71" name="Default Changelist" comment="Debugging Functionality Attached">
+    <list default="true" id="e1d5041b-0fc3-4d87-bdf7-573e6773da71" name="Default Changelist" comment="Moved Machine.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/Counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/Counter.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterAPI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterSlice.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterSlice.spec.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/person/Person.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +51,6 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
@@ -53,6 +60,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -70,19 +78,21 @@
   </component>
   <component name="RunManager" selected="Compound.debug">
     <configuration default="true" type="CompoundRunConfigurationType">
-      <toRun name="FE" type="ShConfigurationType" />
-      <toRun name="BE" type="ShConfigurationType" />
+      <toRun name="Docker" type="ShConfigurationType" />
+      <toRun name="BE" type="NodeJSConfigurationType" />
+      <toRun name="Frontend" type="JavascriptDebugType" />
       <method v="2" />
     </configuration>
     <configuration name="debug" type="CompoundRunConfigurationType">
       <toRun name="Docker" type="ShConfigurationType" />
       <toRun name="BE" type="NodeJSConfigurationType" />
       <toRun name="Frontend" type="JavascriptDebugType" />
-      <toRun name="fe_npm" type="js.build_tools.npm" />
       <method v="2" />
     </configuration>
     <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
-      <method v="2" />
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="fe_npm" run_configuration_type="js.build_tools.npm" />
+      </method>
     </configuration>
     <configuration name="BE" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/backend">
       <method v="2" />
@@ -102,17 +112,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="be_npm" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/backend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <package-manager value="yarn" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="fe_npm" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="start" />
@@ -125,7 +124,6 @@
       <item itemvalue="Compound.debug" />
       <item itemvalue="JavaScript Debug.Frontend" />
       <item itemvalue="Node.js.BE" />
-      <item itemvalue="npm.be_npm" />
       <item itemvalue="npm.fe_npm" />
       <item itemvalue="Shell Script.Docker" />
     </list>
@@ -150,7 +148,7 @@
       <workItem from="1623352928810" duration="3295000" />
       <workItem from="1623392316850" duration="2069000" />
       <workItem from="1623411549546" duration="414000" />
-      <workItem from="1623412031332" duration="1517000" />
+      <workItem from="1623412031332" duration="5642000" />
     </task>
     <task id="LOCAL-00001" summary="4 Players added">
       <created>1623339927514</created>
@@ -166,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623393391328</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Moved Machine.">
+      <created>1623413628700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1623413628700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +209,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="4 Players added" />
     <MESSAGE value="Debugging Functionality Attached" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging Functionality Attached" />
+    <MESSAGE value="Moved Machine." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved Machine." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -218,21 +224,6 @@
           <url>file://$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js</url>
           <line>27</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/src/components/content/User/UserForm.js</url>
-          <line>37</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/index.js</url>
-          <line>32</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/backend/database/user/User.js</url>
-          <line>29</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

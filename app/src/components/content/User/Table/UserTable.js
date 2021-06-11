@@ -9,17 +9,17 @@ import  {setUsers} from "../../../../redux/Users/UsersSlice";
 export default function UserTable() {
 
     const [data, setData] = useState([]);
-    const [header, setHeader] = useState([]);
+    // const [header, setHeader] = useState([]);
     const [loaded,setLoaded] = React.useState(false)
     const isNew = useSelector(selectIsNew)
     const display = (loaded===true) ? "block" : "none"
     const svc = new HttpService()
     const dispatch = useDispatch()
-
-    useEffect(() => {
-       svc.getUserTableHeader().then((header) =>
-           setHeader(header[0].headers))},[])
-
+    //
+    // useEffect(() => {
+    //    svc.getUserTableHeader().then((header) =>
+    //        setHeader(header[0].headers))},[])
+const header = ["ID","Name", "Role"]
     useEffect(() => {
         svc.getAllUsers().then((users) => {
             setData(users)
