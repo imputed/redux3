@@ -1,87 +1,193 @@
 import React, {useEffect} from 'react';
-import {Controller, useForm} from "react-hook-form";
-import {useSelector} from "react-redux";
-import {Box, Button, Card, FormLabel, Grid} from "@material-ui/core";
+
+import {useDispatch, useSelector} from "react-redux";
+import {Box, Button, Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {selectPlayers, selectPlayersId, selectUsers} from "../../../redux/Users/UsersSlice";
 import Player from "./Player";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from '@material-ui/core/FormControl';
+import {setPlayers} from "../../../redux/game/GameSlice";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     box: {
         boxShadow: 'rgb(38, 57, 77) 0px 20px 30px -10px',
         padding: 50,
         marginBottom: 10,
     },
+
+    button: {
+        margin: 10
+    },
+    select: {
+        minWidth: "200px"
+    },
 }));
 
 export function PlayerSelector() {
-    const [placeholder, setPlaceholder]= React.useState(["Default","Default","Default","Default"])
-    const player = useSelector(selectPlayers)
+    const [selectedPlayers, setSelectedPlayers] = React.useState(['', '', '', ''])
+    const [player1, setPlayer1] = React.useState('')
+    const [player2, setPlayer2] = React.useState('')
+    const [player3, setPlayer3] = React.useState('')
+    const [player4, setPlayer4] = React.useState('')
 
-
-    useEffect(() => {
-        player.forEach((p) => {
-            placeholder[p.id]=p.label
-        })
-        setPlaceholder(placeholder)
-        console.log(placeholder)
-            }, [player])
-
-
-
-
-    const {control, handleSubmit} = useForm();
-
-    const onSubmit = (data) => {
-        console.log(player)
-    };
 
     const classes = useStyles()
 
-    const selectedUsers = []
-    useSelector(selectUsers).map((user) => selectedUsers.push({value: user._id, label: user.name}))
+    const checkPosition = (newValue) => {
+        const tmpSelectedPlayers = selectedPlayers.filter((e => e === newValue))
+        return (tmpSelectedPlayers.length === 0)
+    }
 
+    const user = useSelector(selectUsers)
+    const handleChangePlayer1 = (event) => {
+        if (checkPosition(event.target.value)) {
+            const tmpSelectedPlayers = selectedPlayers
+            tmpSelectedPlayers[0] = event.target.value
+            setPlayer1(event.target.value);
+            setSelectedPlayers(tmpSelectedPlayers)
+        }
+    };
+    const handleChangePlayer2 = (event) => {
+        if (checkPosition(event.target.value)) {
+            const tmpSelectedPlayers = selectedPlayers
+            tmpSelectedPlayers[1] = event.target.value
+            setPlayer2(event.target.value);
+            setSelectedPlayers(tmpSelectedPlayers)
+        }
+    }
 
+    const handleChangePlayer3 = (event) => {
+        if (checkPosition(event.target.value)) {
+            const tmpSelectedPlayers = selectedPlayers
+            tmpSelectedPlayers[2] = event.target.value
+            setPlayer3(event.target.value);
+            setSelectedPlayers(tmpSelectedPlayers)
+        }
 
+    };
+    const handleChangePlayer4 = (event) => {
+        if (checkPosition(event.target.value)) {
+            const tmpSelectedPlayers = selectedPlayers
+            tmpSelectedPlayers[3] = event.target.value
+            setPlayer4(event.target.value);
+            setSelectedPlayers(tmpSelectedPlayers)
+        }
+    };
+    const dispatch = useDispatch()
+    const submit = () => {
+        dispatch(dispatch(setPlayers(([player1,player2,player3,player4]))))
+    }
 
     return (
         <Box className={classes.box}>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <Grid container spacing={8} justify={"space-around"}>
 
-
-                <Grid container spacing={8} justify={"space-around"}>
-                    <Grid item>
-                        <Grid container spacing={8}>
-                            <Player users={selectedUsers} name={"Player 1"} id={"0"} placeholder={placeholder[0]}/>
-                            <Player users={selectedUsers} name={"Player 2"} id={"1"} placeholder={placeholder[1]}/>
-
-
+                <Grid item>
+                    <Grid container justify={"center"} direction={"column"} spacing={2}>
+                        <Grid item>
+                            <h3 style={{textAlign: "center"}}>Player 1</h3>
+                        </Grid>
+                        <Grid item style={{width: "100%"}}>
+                            <Select
+                                id={toString(1)}
+                                value={player1}
+                                onChange={handleChangePlayer1}
+                                displayEmpty
+                                className={classes.select}
+                                label={"diabled"}
+                                style={{textAlign: "center"}}
+                            >
+                                {user.map((u) => {
+                                    return (
+                                        <MenuItem key={"MenuItemKey" + u._id} value={u._id}
+                                                  name={"dsf"}>{u.name}</MenuItem>)
+                                })}
+                            </Select>
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        <Grid container spacing={8}>
-                            <Player users={selectedUsers} name={"Player 3"} id={"2"} placeholder={placeholder[2]}/>
-                            <Player users={selectedUsers} name={"Player 4"} id={"3"} placeholder={placeholder[3]}/> </Grid>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Grid container justify={"center"}>
-                            <Grid item>
-                                <Card style={{alignItems: "center", width: "100%", textAlign: "center"}}>
-                                    <Button type={"submit"}>Initiate Game</Button>
-                                </Card>
-                            </Grid>
+                </Grid>
+                <Grid item>
+                    <Grid container justify={"center"} direction={"column"} spacing={2}>
+                        <Grid item>
+                            <h3 style={{textAlign: "center"}}>Player 2</h3>
                         </Grid>
-
+                        <Grid item style={{width: "100%"}}>
+                            <Select
+                                value={player2}
+                                onChange={handleChangePlayer2}
+                                displayEmpty
+                                className={classes.select}
+                                label={"diabled"}
+                                style={{textAlign: "center"}}
+                            >
+                                {user.map((u) => {
+                                    return (
+                                        <MenuItem key={"MenuItemKey" + u._id} value={u._id}
+                                                  name={"dsf"}>{u.name}</MenuItem>)
+                                })}
+                            </Select>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <Grid container justify={"center"} direction={"column"} spacing={2}>
+                        <Grid item>
+                            <h3 style={{textAlign: "center"}}>Player 3</h3>
+                        </Grid>
+                        <Grid item style={{width: "100%"}}>
+                            <Select
+                                value={player3}
+                                onChange={handleChangePlayer3}
+                                displayEmpty
+                                className={classes.select}
+                                label={"diabled"}
+                                style={{textAlign: "center"}}
+                            >
+                                {user.map((u) => {
+                                    return (
+                                        <MenuItem key={"MenuItemKey" + u._id} value={u._id}
+                                                  name={"dsf"}>{u.name}</MenuItem>)
+                                })}
+                            </Select>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <Grid container justify={"center"} direction={"column"} spacing={2}>
+                        <Grid item>
+                            <h3 style={{textAlign: "center"}}>Player 4</h3>
+                        </Grid>
+                        <Grid item style={{width: "100%"}}>
+                            <Select
+                                value={player4}
+                                onChange={handleChangePlayer4}
+                                displayEmpty
+                                className={classes.select}
+                                label={"diabled"}
+                                style={{textAlign: "center"}}
+                            >
+                                {user.map((u) => {
+                                    return (
+                                        <MenuItem key={"MenuItemKey" + u._id} value={u._id}
+                                                  name={"dsf"}>{u.name}</MenuItem>)
+                                })}
+                            </Select>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid container xs={12} alignItems={"center"} alignContent={"center"} justify={"center"}>
+                    <Grid item>
+                        <Button onClick={submit}>Begin Round</Button>
                     </Grid>
 
                 </Grid>
-
-
-            </form>
-
+            </Grid>
 
         </Box>
     );
+
 }
 
 

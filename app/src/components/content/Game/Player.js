@@ -1,42 +1,45 @@
 import React from 'react';
-import {Controller, useForm} from "react-hook-form";
-import {useDispatch, useSelector} from "react-redux";
-import {Box, Button, Card, FormLabel, Grid} from "@material-ui/core";
+import {Grid} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import Select from "react-select";
-import {selectPlayers, selectUsers, setSelectPlayer, setSelectUsers} from "../../../redux/Users/UsersSlice";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+
+
+const useStyles = makeStyles((theme) => ({
+    select: {
+        minWidth: "200px"
+    },
+}));
 
 export function Player(props) {
-    const {control} = useForm();
-    const selectedUsers = props.users
-    const name = props.name
-    const id = props.id
-    const placeholder = props.placeholder
-    const dispatch = useDispatch()
+    const classes = useStyles()
+    const handleChange = (event) => {
+        props.onChange(props.id, event.target.value);
+    };
 
-    const change = (ev) => {
-        dispatch(setSelectPlayer({value: ev.value, id: id, label:ev.label}))
-    }
     return (
 
         <Grid item>
-            <Grid container justify={"center"} direction={"row"} spacing={2}>
+            <Grid container justify={"center"} direction={"column"} spacing={2}>
                 <Grid item>
-                    <FormLabel>{name}</FormLabel>
+                    <h1 style={{textAlign: "center"}}>Player {props.id}</h1>
                 </Grid>
                 <Grid item style={{width: "100%"}}>
-                    <Controller
-                        name={id}
-                        control={control}
-                        render={({field}) => <Select
-                            {...field}
-                            options={selectedUsers}
-                            onChange={(ev) => change(ev)}
-                            placeholder={placeholder}
-
-
-                        />}
-                    />
+                    <Select
+                        id={toString(props.id)}
+                        value={props.selectedPlayer}
+                        onChange={handleChange}
+                        displayEmpty
+                        className={classes.select}
+                        label={"diabled"}
+                        style={{textAlign: "center"}}
+                    >
+                        {props.options.map((u) => {
+                            console.log(props.selectedPlayer)
+                            return (
+                                <MenuItem key={"MenuItemKey" + u._id} value={u._id} name={"dsf"}>{u.name}</MenuItem>)
+                        })}
+                    </Select>
                 </Grid>
             </Grid>
         </Grid>

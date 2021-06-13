@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1d5041b-0fc3-4d87-bdf7-573e6773da71" name="Default Changelist" comment="Moved Machine.">
+      <change afterPath="$PROJECT_DIR$/app/src/components/content/Game/PlayerTable.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/redux/game/GameSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/User/Table/UserTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/Counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/Counter.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterAPI.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterSlice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/counter/counterSlice.spec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/redux/person/Person.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/content/Game/GamesInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Game/GamesInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/content/Game/Player.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Game/Player.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/content/Game/PlayerSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/content/Game/PlayerSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -76,7 +75,7 @@
       <recent name="\\wsl$\Ubuntu-20.04\home\bene\yarn\redux\app\src\components\content\Content\Table" />
     </key>
   </component>
-  <component name="RunManager" selected="Compound.debug">
+  <component name="RunManager" selected="JavaScript Debug.FE2Unnamed">
     <configuration default="true" type="CompoundRunConfigurationType">
       <toRun name="Docker" type="ShConfigurationType" />
       <toRun name="BE" type="NodeJSConfigurationType" />
@@ -84,9 +83,13 @@
       <method v="2" />
     </configuration>
     <configuration name="debug" type="CompoundRunConfigurationType">
+      <toRun name="BE" type="ShConfigurationType" />
       <toRun name="Docker" type="ShConfigurationType" />
-      <toRun name="BE" type="NodeJSConfigurationType" />
-      <toRun name="Frontend" type="JavascriptDebugType" />
+      <toRun name="FE" type="ShConfigurationType" />
+      <toRun name="FE2Unnamed" type="JavascriptDebugType" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FE2Unnamed" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
       <method v="2" />
     </configuration>
     <configuration name="Frontend" type="JavascriptDebugType" uri="http://localhost:3000/" useFirstLineBreakpoints="true">
@@ -97,6 +100,21 @@
     <configuration name="BE" type="NodeJSConfigurationType" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/backend">
       <method v="2" />
     </configuration>
+    <configuration name="BE" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="cd backend &amp;&amp; yarn start" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="docker start af1b8cba2508" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="false" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Docker" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="docker start daecd18da816924c580bf30fd970c86775937f2f9992434bca470c8333a4c0c2" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -104,6 +122,21 @@
       <option name="SCRIPT_OPTIONS" value="" />
       <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="false" />
       <option name="SCRIPT_WORKING_DIRECTORY" value="$USER_HOME$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="false" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="FE" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="cd app &amp;&amp; yarn start" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="docker start af1b8cba2508" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="false" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
       <option name="INTERPRETER_PATH" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,10 +155,13 @@
     </configuration>
     <list>
       <item itemvalue="Compound.debug" />
+      <item itemvalue="JavaScript Debug.FE2Unnamed" />
       <item itemvalue="JavaScript Debug.Frontend" />
       <item itemvalue="Node.js.BE" />
       <item itemvalue="npm.fe_npm" />
       <item itemvalue="Shell Script.Docker" />
+      <item itemvalue="Shell Script.FE" />
+      <item itemvalue="Shell Script.BE" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -149,6 +185,10 @@
       <workItem from="1623392316850" duration="2069000" />
       <workItem from="1623411549546" duration="414000" />
       <workItem from="1623412031332" duration="5642000" />
+      <workItem from="1623584715502" duration="7214000" />
+      <workItem from="1623593471283" duration="10595000" />
+      <workItem from="1623605948271" duration="5098000" />
+      <workItem from="1623615760711" duration="1750000" />
     </task>
     <task id="LOCAL-00001" summary="4 Players added">
       <created>1623339927514</created>
@@ -216,17 +256,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/src/components/content/Game/Player.js</url>
-          <line>17</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/app/src/redux/Users/UsersSlice.js</url>
           <line>27</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/src/components/content/Game/Player.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JavascriptDebugType">
+        <watch expression="selectedPlayers" language="JavaScript" />
+        <watch expression="player1" language="JavaScript" />
+        <watch expression="selectedPlayers.filter(p =&gt; p === '').length" language="JavaScript" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
